@@ -60,6 +60,12 @@ public class StatisticsTest {
     }
     
     @Test
+    public void returnNullIfPlayerNameNotListed(){
+        Player returnedPlayer = stats.search("Selänne");
+        assertNull(returnedPlayer);
+    }
+    
+    @Test
     public void canReturnTeamPlayersByTeamName(){
         String[] players = new String[]{"Kurri", "Semenko", "Gretzky"};
         List<Player> returnedTeam = stats.team("EDM");
